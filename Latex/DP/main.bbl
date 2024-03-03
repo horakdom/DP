@@ -1,0 +1,65 @@
+\begin{thebibliography}{10}
+
+\bibitem{zou1995improved}
+Zou{,} Q.{,} Hou{,} S.{,} Chen{,}~S. a~Doolen{,} G.~D.
+\newblock \uv{A improved incompressible lattice Boltzmann model for
+  time-independent flows}.
+\newblock {\em Journal of Statistical Physics}, 81 \hspace{.5mm}(1995), s.
+  35--48.
+
+\bibitem{geier2007properties}
+Geier{,} M.{,} Greiner{,}~A. a~Korvink{,} J.~G.
+\newblock \uv{Properties of the cascaded lattice Boltzmann automaton}.
+\newblock {\em International Journal of Modern Physics C}, 18.04
+  \hspace{.5mm}(2007), s. 455--462.
+
+\bibitem{geier2015cumulant}
+Geier{,} M.{,} Sch{\"o}nherr{,} M.{,} Pasquali{,}~A. a~Krafczyk{,}~M.
+\newblock \uv{The cumulant lattice Boltzmann equation in three dimensions:
+  Theory and validation}.
+\newblock {\em Computers \& Mathematics with Applications}, 70.4
+  \hspace{.5mm}(2015), s. 507--547.
+
+\bibitem{landau2013fluid}
+Landau{,} L.~D. a~Lifshitz{,} E.~M.
+\newblock {\em Fluid Mechanics: Landau and Lifshitz: Course of Theoretical
+  Physics}.
+\newblock Sv. 6{,} Elsevier, 2013.
+
+\bibitem{mika1999chemicke}
+M{\'\i}ka{,}~V. a~Neu{\v{z}}il{,}~L.
+\newblock {\em Chemick{\'e} in{\v{z}}en{\`y}rstv{\'\i} II}.
+\newblock Vysok{\'a} {\v{s}}kola chemicko-technologick{\'a}, 1999.
+
+\bibitem{guo2013lattice}
+Guo{,}~Z. a~Shu{,}~C.
+\newblock {\em Lattice Boltzmann method and its application in engineering}.
+\newblock Sv. 3. World Scientific, 2013.
+
+\bibitem{kruger2017lattice}
+Kr{\"u}ger{,} T.{,} Kusumaatmaja{,} H.{,} Kuzmin{,} A.{,} Shardt{,} O.{,}
+  Silva{,}~G. a~Viggen{,} E.~M.
+\newblock \uv{The lattice Boltzmann method}.
+\newblock {\em Springer International Publishing}, 10 \hspace{0.5mm}(2017), s.
+  3--978.
+
+\bibitem{ruzicka2008dimensionless}
+Ruzicka{,}~M. C.
+\newblock On dimensionless numbers.
+\newblock {\em Chemical Engineering Research and Design}, 86
+  \hspace{.5mm}(2008), s. 835-868.
+
+\bibitem{BP_DH}
+Hor\'{a}k{,} D.
+\newblock Matematick{\'e} modelov{\'a}n{\'\i} proud\v{e}n\'{\i} a
+  obt\'{e}k\'{a}n\'{\i} p\v{r}ek\'{a}\v{z}ek pomoc{\'\i}
+  m\v{r}\'{\i}\v{z}kov\'{e} boltzmannovy metody.
+\newblock Bakal\'{a}\v{r}sk\'{a} pr\'{a}ce, {\v{C}}esk{\'e} vysok{\'e}
+  u{\v{c}}en{\'\i} technick{\'e} v Praze, 2022.
+
+\bibitem{buresti2015note}
+Buresti{,} G.
+\newblock \uv{A note on Stokes’ hypothesis}.
+\newblock {\em Acta Mechanica}, 226.10 \hspace{.5mm}(2015), s. 3555--3559.
+
+\end{thebibliography}

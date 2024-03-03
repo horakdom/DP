@@ -1,0 +1,157 @@
+#!/bin/bash
+
+# Job Name
+#PBS -N job_sim01
+
+# required runtime
+#PBS -l walltime=24:00:00
+
+# queue for submission
+#PBS -q gpuA
+
+# Merge output and error files
+#PBS -j oe
+
+# request 1 CPU (max 32 per type-C node) and 4 GPUs (max 4)
+#PBS -l select=1:mem=320G:ncpus=8:ngpus=4:mpiprocs=4:ompthreads=8
+
+# start job in the directory it was submitted from
+cd "$PBS_O_WORKDIR"
+
+# load the necessary software modules
+module load cuda/11.7 openmpi/4.1.0-gcc_4.8.5-psm2-cuda11.7 gcc/11.3
+
+make clean
+
+./src/run sim_D1
+
+# set the task ID: $SLURM_ARRAY_TASK_ID or $PBS_ARRAY_INDEX or -1
+taskID=${PBS_ARRAY_INDEX:-${SLURM_ARRAY_TASK_ID:--1}}
+
+# set up case counter and target
+# (targetCase may be set by the outside environment, otherwise it defaults to the task ID)
+targetCase=${targetCase:-${taskID}}
+caseCounter=0
+
+function run_case()
+{
+    # handle case counting
+    if [[ "$targetCase" != "-1" && "$targetCase" != "$caseCounter" ]]; then
+        # NOTE: this output is important for the self-starting in do_slurm
+        echo "targetCase = $targetCase, caseCounter = $caseCounter → skipping"
+        caseCounter=$(( $caseCounter + 1 ))
+        return
+    fi
+    caseCounter=$(( $caseCounter + 1 ))
+
+#radiator dimension test for all dimensions
+    mpirun ./build/src/sim_D1 $res $id $transfer $vel $lbVis $force $air_temp $body_temp
+}
+
+function run()
+{
+
+for res in 10 20; do
+for id in 4; do
+for transfer in 0.0; do
+for vel in 1.0; do
+for lbVis in 0.0001; do
+for force in 0.0; do
+for air_temp in 5.0; do
+for body_temp in 5.0; do
+    run_case
+done
+done
+done
+done 
+done
+done
+done
+done
+
+}
+
+if [[ -n "$PBS_JOBID" ]]; then
+    # run the application and provide its command line arguments
+    run
+else
+    # invoked by the user - count all cases and submit the job array
+    echo "Counting all cases for the job array..."
+    targetCase=none run
+    lastIndex="$(( $caseCounter - 1 ))"
+    qsub -J "0-$lastIndex" "$0"
+    rm -f log.caseCount
+fi
+
+
+
+# # set the task ID: $SLURM_ARRAY_TASK_ID or $PBS_ARRAY_INDEX or -1
+# taskID=${PBS_ARRAY_INDEX:-${SLURM_ARRAY_TASK_ID:--1}}
+
+# # set up case counter and target
+# # (targetCase may be set by the outside environment, otherwise it defaults to the task ID)
+# targetCase=${targetCase:-${taskID}}
+# caseCounter=0
+
+# function run_case()
+# {
+#     # handle case counting
+#     if [[ "$targetCase" != "-1" && "$targetCase" != "$caseCounter" ]]; then
+#         # NOTE: this output is important for the self-starting in do_slurm
+#         echo "targetCase = $targetCase, caseCounter = $caseCounter → skipping"
+#         caseCounter=$(( $caseCounter + 1 ))
+#         return
+#     fi
+#     caseCounter=$(( $caseCounter + 1 ))
+
+# #radiator dimension test for all dimensions
+#     mpirun ./sim_01 $res $id $transfer $vel $lbVis
+# }
+
+# function run()
+# {
+
+# # for res in 8; do
+# # for i in 2; do
+# # for id in 10; do
+# # for transfer in 0.05; do
+# # for vel in 1.0; do
+# #     run_case
+# # done 
+# # done
+# # done
+# # done
+# # done
+#     params=()
+    
+#     for res in 6 13; do
+#     for id in 1; do
+#     for transfer in 0; do
+#     for vel in 0.8; do
+#     for lbVis in 0.00001; do
+#         params+=("$res $id $transfer $vel $lbVis")
+#     done
+#     done
+#     done
+#     done
+#     done
+
+#     for param in "${params[@]}"; do
+#         IFS=" " read -r res i id transfer vel <<< "$param"
+#         run_case
+#     done
+
+
+# }
+
+# if [[ -n "$PBS_JOBID" ]]; then
+#     # run the application and provide its command line arguments
+#     run
+# else
+#     # invoked by the user - count all cases and submit the job array
+#     echo "Counting all cases for the job array..."
+#     targetCase=none run
+#     lastIndex="$(( $caseCounter - 1 ))"
+#     qsub -J "0-$lastIndex" "$0"
+#     rm -f log.caseCount
+# fi

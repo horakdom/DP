@@ -1,0 +1,132 @@
+%% LyX 2.3.6.1 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[11pt,oneside,american,czech]{book}
+
+\input{packages.tex}
+\input{commands.tex}
+
+\usepackage{pdfpages}
+
+\makeatletter
+\newcommand{\vast}{\bBigg@{4}}
+\newcommand{\Vast}{\bBigg@{5}}
+
+\begin{document}
+\def\documentdate{7. \v{c}ervence 2023}
+
+%%\def\documentdate{\today}
+
+\pagestyle{empty}
+{\centering
+
+\noindent %
+\begin{minipage}[c]{3cm}%
+\noindent \begin{center}
+\includegraphics[width=3cm,height=3cm,keepaspectratio]{Img/TITLE/cvut}
+\par\end{center}%
+\end{minipage}%
+\begin{minipage}[c]{0.6\linewidth}%
+\begin{center}
+\textsc{\large{}České vysoké učení technické v Praze}{\large{}}\\
+{\large{}Fakulta jaderná a fyzikálně inženýrská}
+\par\end{center}%
+\end{minipage}%
+\begin{minipage}[c]{3cm}%
+\noindent \begin{center}
+\includegraphics[width=3cm,height=3cm,keepaspectratio]{Img/TITLE/fjfi}
+\par\end{center}%
+\end{minipage}
+
+\vspace{3cm}
+
+\textbf{\huge{}\nazevcz
+}{\huge\par}
+
+\vspace{1cm}
+
+\selectlanguage{american}%
+\textbf{\huge{}\nazeven}{\huge\par}
+
+\selectlanguage{czech}%
+\vspace{2cm}
+
+{\large{}Diplomov\'{a} pr\'{a}ce\large\par}
+
+}
+
+\vfill{}
+
+\begin{lyxlist}{MMMMMMMMM}
+\begin{singlespace}
+\item [{Autor:}] \textbf{\autor}
+\item [{Vedoucí~práce:}] \textbf{\konzultant}
+\item [{Konzultant:}] \textbf{\vedouci}
+\item [{Akademický~rok:}] 2023/2024
+\end{singlespace}
+\end{lyxlist}
+
+\afterpage{\blankpage}
+
+
+
+
+
+% \includepdf[pages=1]{Img/PredniZadani.pdf}
+
+% \includepdf[pages=1]{Img/ZadniZadani.pdf}
+
+
+\noindent \emph{\Large{}Pod\v{e}kov\'{a}n\'{\i}:}{\Large\par}
+
+\noindent Cht\v{e}l bych zde pod\v{e}kovat p\v{r}edev\v{s}\'{\i}m m\'{y}m vedouc\'{\i}m Ing. Jakubovi Klinkovsk\'{e}mu Ph.D. a doc. Ing. Radku Fu\v{c}\'{\i}kovi, Ph.D. za ochotu, z\'{a}zem\'{\i}, pe\v{c}livost a v neposledn\'{\i} \v{r}ad\v{e} tak\'{e} za neoceniteln\'{e} rady bez kter\'{y}ch by tato pr\'{a}ce nevznikla. M\'{e} d\'{\i}ky pat\v{r}\'{\i} tak\'{e} m\'{e} rodin\v{e} a p\v{r}\'{\i}telkyni za ve\v{s}kerou podporu p\v{r}i studiu.
+
+Tato pr\'{a}ce byla podpo\v{r}ena grantem Studentsk\'{e} grantov\'{e} sout\v{e}\v{z}e \v{C}VUT \v{c}. SGS20/184/OHK4/3T/14.
+
+\vfill
+
+\noindent \emph{\Large{}Čestné prohlášení:}{\Large\par}
+
+\noindent Prohlašuji, že jsem tuto práci vypracoval samostatně a uvedl
+jsem všechnu použitou literaturu.
+
+\bigskip{}
+
+\noindent V Praze dne 10. kv\v{e}tna 2024 \hfill{}\autor
+
+\vspace{2cm}
+
+\pagestyle{empty}
+
+\afterpage{\blankpage}
+\newpage{}
+
+\input{abstract}
+
+
+\selectlanguage{czech}%
+\newpage{}
+
+\pagestyle{headings}
+
+\tableofcontents{}
+
+\newpage{}
+
+\include{kapitoly/uvod}
+
+\include{kapitoly/kapitola1}
+
+\include{kapitoly/kapitola2}
+
+\include{kapitoly/kapitola3}
+
+\include{kapitoly/kapitola4}
+
+
+\include{kapitoly/zaver}
+
+
+\bibliographystyle{plain}
+\bibliography{reference}
+
+\end{document}

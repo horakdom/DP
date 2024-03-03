@@ -1,0 +1,26 @@
+\chapter*{Závěr}
+
+\pagestyle{plain}
+
+\addcontentsline{toc}{chapter}{Záv\v{e}r}
+
+C\'{\i}lem t\'{e}to pr\'{a}ce bylo matematick\'{e} modelov\'{a}n\'{\i} izoterm\'{a}ln\'{\i}ho proud\v{e}n\'{\i} newtonovsk\'{e} nestla\v{c}iteln\'{e} tekutiny pomoc\'{\i} m\v{r}\'{\i}\v{z}kov\'{e} Boltzmannovy metody.
+
+Prvn\'{\i} kapitola byla v\v{e}nov\'{a}na zasv\v{e}cen\'{\i} \v{c}ten\'{a}\v{r}e do matematick\'{e}ho modelu popisuj\'{\i}c\'{\i} rovnice izoterm\'{a}ln\'{\i}ho proud\v{e}n\'{\i}. V r\'{a}mci t\'{e}to kapitoly byly uvedeny rovnice popisuj\'{\i}c\'{\i} dynamiku tekutiny. 
+
+Druh\'{a} kapitola se zam\v{e}\v{r}ovala na samotnou numerickou metodu pou\v{z}itou k simulac\'{\i} -- m\v{r}\'{\i}\v{z}kovou Boltzmannovu metodu (LBM). V t\'{e}to \v{c}\'{a}sti byla pops\'{a}na p\v{r}estupov\'{a} okrajov\'{a} podm\'{\i}nka, kter\'{a} byla v~r\'{a}mci pr\'{a}ce implementov\'{a}na. V t\'{e}to kapitole byly tak\'{e} pops\'{a}ny datov\'{e} struktury pou\v{z}it\'{e} v LBM k\'{o}du, d\'{a}le zde jsou uvedeny pozn\'{a}mky k implementaci na v\'{\i}ce grafick\'{y}ch kart\'{a}ch.  
+
+Ve t\v{r}et\'{\i} kapitole jsou shrnuty v\'{y}sledky aplikace m\v{r}\'{\i}\v{z}kov\'{e} Boltzmannovy metody na \'{u}lohu formulovanou v prvn\'{\i} kapitole.  V prvn\'{\i} \v{c}\'{a}sti je \'{u}sp\v{e}\v{s}n\v{e} implementov\'{a}no pole pro prostorov\v{e} prom\v{e}nliv\'{y} difuzn\'{\i} koeficient. Druh\'{a} \v{c}\'{a}st se v\v{e}nuje implementaci p\v{r}estupov\'{e} okrajov\'{e} podm\'{\i}nky, kter\'{a} byla tak\'{e} \'{u}sp\v{e}\v{s}n\v{e} implementov\'{a}na. V posledn\'{\i} \v{c}\'{a}sti je LBM pou\v{z}ita k hled\'{a}n\'{\i} optim\'{a}ln\'{\i}ho rozm\v{e}ru radi\'{a}toru pro v\r{u}z FSE.12.
+
+K numerick\'{y}m simulac\'{\i}m byl vyu\v{z}it k\'{o}d LBM vyu\v{z}\'{\i}vaj\'{\i}c\'{\i} softwarov\'{e}ho bal\'{\i}\v{c}ku CUDA od spole\v{c}nosti Nvidia, d\'{\i}ky kter\'{e}mu bylo umo\v{z}n\v{e}no po\v{c}\'{\i}t\'{a}n\'{\i} na grafick\'{y}ch kart\'{a}ch. Tento k\'{o}d je naps\'{a}n v jazyce C++ a ji\v{z} n\v{e}kolik let je vyv\'{\i}jen\'{y} na KM FJFI \v{C}VUT v Praze.  V r\'{a}mci t\'{e}to pr\'{a}ce byl v tomto k\'{o}du opraven model D3Q7. K\'{o}d byl pro \'{u}\v{c}ely pr\'{a}ce roz\v{s}\'{\i}\v{r}en o pole pro r\r{u}zn\'{e} difuzn\'{\i} koeficienty a tak\'{e} byla do k\'{o}du implementov\'{a}na p\v{r}estupov\'{a} okrajov\'{a} podm\'{\i}nka.
+
+V bl\'{\i}zk\'{e} budoucnosti je c\'{\i}lem simulovat slo\v{z}it\v{e}j\v{s}\'{\i} geometrii chladi\v{c}e, kter\'{a} by m\v{e}la zohled\v{n}ovat i geometrii j\'{a}dra. D\'{a}le je v pl\'{a}nu porovnat v\'{y}sledky numerick\'{y}ch simulac\'{\i} s re\'{a}ln\'{y}mi daty ze senzor\r{u} vozu FSE.12. Dal\v{s}\'{\i}m c\'{\i}lem je studovat a vyhodnotit chov\'{a}n\'{\i} teplotn\'{\i}ho pole na mezn\'{\i} vrstv\v{e}.
+
+
+
+
+% T\v{r}et\'{\i} kapitola byla v\v{e}nov\'{a}na samotn\'{y}m v\'{y}sledk\r{u}m testov\'{a}n\'{\i} implementace metody v\'{y}m\v{e}ny hybnosti. Z\'{\i}skan\'{a} s\'{\i}la vedla k v\'{y}po\v{c}tu bezrozm\v{e}rn\'{y}ch koeficient\r{u} odporu a vztlaku dan\'{e}ho t\v{e}lesa. Spr\'{a}vnost implementace v\'{y}po\v{c}tu s\'{\i}ly byla ov\v{e}\v{r}ov\'{a}na porovn\'{a}n\'{\i}m bezrozm\v{e}rn\'{y}ch koeficient\r{u} s referen\v{c}n\'{\i}mi hodnotami z \cite{schafer1996benchmark}. 
+
+% K numerick\'{y}m simulac\'{\i}m byl vyu\v{z}\'{\i}v\'{a}n k\'{o}d LBM se softwarem CUDA od spole\v{c}nosti Nvidia umo\v{z}\v{n}uj\'{\i}c\'{\i}m paraleln\'{\i} v\'{y}po\v{c}et na grafick\'{y}ch kart\'{a}ch implementovan\'{y} v jazyce C++. Tento k\'{o}d je vyv\'{\i}jen na KM FJFI \v{C}VUT v Praze. Pro \'{u}\v{c}ely t\'{e}to pr\'{a}ce byl v tomto k\'{o}du implementov\'{a}n zmi\v{n}ovan\'{y} v\'{y}po\v{c}et s\'{\i}ly metodou v\'{y}m\v{e}ny hybnosti pro 2D a 3D model. Simulace \'{u}loh byly provedeny pro dv\v{e} r\r{u}zn\'{a} Reynoldsova \v{c}\'{\i}sla p\v{r}edstavuj\'{\i}c\'{\i} stabiln\'{\i} a nestabiln\'{\i} proud\v{e}n\'{\i}. Ve 2D \'{u}loze bylo p\v{r}ek\'{a}\v{z}kou t\v{e}leso kruhov\'{e}ho tvaru, ve 3D \'{u}loze byly za t\v{e}lesa voleny postupn\v{e} v\'{a}lec a kv\'{a}dr se \v{c}tvercovou podstavou.
+
+% V bl\'{\i}zk\'{e} budoucnosti bude c\'{\i}lem roz\v{s}\'{\i}\v{r}it LBM k\'{o}d o rovnici veden\'{\i} tepla a simulovat v\'{y}m\v{e}n\'{\i}k tepla (nap\v{r}. chladi\v{c} v aut\v{e} nebo topen\'{\i} v m\'{\i}stnosti). V neposledn\'{\i} \v{r}ad\v{e} je v pl\'{a}nu implementovat dosud testovan\'{e} \'{u}lohy v softwaru OpenFOAM a porovnat s v\'{y}sledky LBM.

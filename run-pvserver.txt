@@ -1,0 +1,14 @@
+#!/bin/bash
+
+host="$1"
+
+if [[ "$host" == "" ]]; then
+    echo "usage: $0 [user@]hostname"
+    exit 1
+fi
+
+hostname=$(ssh "$host" "uname -n")
+port=11111
+
+# NOTE: bash -lc is needed to get full $PATH by sourcing /etc/profile.d/*.sh
+ssh -C -t -L "localhost:$port:$hostname:$port" "$host" "bash -lc 'mpirun -np 2 pvserver -display :0 --server-port=$port'"
